@@ -21,8 +21,11 @@ import (
 
 // --- STYLES ---
 var (
-	appStyle = lipgloss.NewStyle().Margin(1, 2)
-	docStyle = lipgloss.NewStyle()
+	appStyle    = lipgloss.NewStyle().Margin(1, 2)
+	docStyle    = lipgloss.NewStyle()
+	titleStyle  = lipgloss.NewStyle().Foreground(lipgloss.Color("62")).Bold(true)
+	promptStyle = lipgloss.NewStyle().Foreground(lipgloss.Color("241"))
+	helpStyle   = lipgloss.NewStyle().Foreground(lipgloss.Color("244"))
 )
 
 // --- STATE ---
@@ -224,7 +227,11 @@ func (m model) View() string {
 
 	switch m.state {
 	case statePromptForPath:
-		return appStyle.Render(fmt.Sprintf("Welcome to gopuntes!\n\nPlease enter the full path to your notes folder:\n\n%s\n\n(press enter to save)", m.textInput.View()))
+		title := titleStyle.Render("Welcome to gopuntes!")
+		prompt := promptStyle.Render("Please enter the full path to your notes folder:")
+		help := helpStyle.Render("(press enter to save)")
+		return appStyle.Render(fmt.Sprintf("%s\n\n%s\n\n%s\n\n%s", title, prompt, m.textInput.View(), help))
+
 	case stateShowList:
 		if m.showViewport {
 			return docStyle.Render(m.viewport.View())
