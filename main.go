@@ -1,3 +1,4 @@
+
 package main
 
 import (
@@ -62,7 +63,7 @@ func initialModel(notes []item, config Config) model {
 	}
 
 	l := list.New(items, list.NewDefaultDelegate(), 0, 0)
-	l.Title = "Twoje notatki"
+	l.Title = "Your Notes"
 	l.SetShowHelp(true)
 
 	m := model{
@@ -71,7 +72,7 @@ func initialModel(notes []item, config Config) model {
 	}
 
 	if len(notes) == 0 {
-		m.err = fmt.Errorf("nie znaleziono żadnych plików .md ani .pdf w '%s'", config.NotesPath)
+		m.err = fmt.Errorf("No .md or .pdf files found in '%s'", config.NotesPath)
 	}
 	return m
 }
@@ -151,7 +152,7 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 
 func (m model) View() string {
 	if m.err != nil {
-		return appStyle.Render(fmt.Sprintf("Błąd: %s", m.err.Error()))
+		return appStyle.Render(fmt.Sprintf("Error: %s", m.err.Error()))
 	}
 
 	if m.showViewport {
@@ -184,11 +185,11 @@ func openPDF(path string) tea.Cmd {
 		case "windows":
 			cmd = exec.Command("cmd", "/C", "start", path)
 		default:
-			return errorMsg{fmt.Errorf("nieobsługiwany system operacyjny: %s", runtime.GOOS)}
+			return errorMsg{fmt.Errorf("unsupported operating system: %s", runtime.GOOS)}
 		}
 
 		if err := cmd.Run(); err != nil {
-			return errorMsg{fmt.Errorf("nie udało się otworzyć pliku PDF: %w", err)}
+			return errorMsg{fmt.Errorf("failed to open PDF file: %w", err)}
 		}
 		return nil
 	}
@@ -199,13 +200,13 @@ func openPDF(path string) tea.Cmd {
 func main() {
 	config, err := getConfig()
 	if err != nil {
-		fmt.Printf("Błąd inicjalizacji: %v\n", err)
+		fmt.Printf("Initialization error: %v\n", err)
 		os.Exit(1)
 	}
 
 	notes, err := findNotes(config.NotesPath)
 	if err != nil {
-		log.Fatalf("Błąd krytyczny: nie udało się przeszukać folderu '%s': %v", config.NotesPath, err)
+		log.Fatalf("Critical error: failed to scan notes directory '%s': %v", config.NotesPath, err)
 	}
 
 	m := initialModel(notes, config)
@@ -225,13 +226,13 @@ func getConfig() (Config, error) {
 
 	var config Config
 	if _, err := os.Stat(configPath); os.IsNotExist(err) {
-		fmt.Println("Witaj w gopuntes! Wygląda na to, że to pierwsze uruchomienie.")
-		fmt.Print("Podaj pełną ścieżkę do folderu z notatkami: ")
+		fmt.Println("Welcome to gopuntes! It looks like this is your first run.")
+		fmt.Print("Please enter the full path to your notes folder: ")
 
 		reader := bufio.NewReader(os.Stdin)
 		notesPath, err := reader.ReadString('\n')
 		if err != nil {
-			return config, fmt.Errorf("nie udało się odczytać ścieżki: %w", err)
+			return config, fmt.Errorf("failed to read path: %w", err)
 		}
 		notesPath = strings.TrimSpace(notesPath)
 
@@ -239,28 +240,28 @@ func getConfig() (Config, error) {
 
 		configDir := filepath.Dir(configPath)
 		if err := os.MkdirAll(configDir, 0755); err != nil {
-			return config, fmt.Errorf("nie udało się stworzyć folderu konfiguracyjnego: %w", err)
+			return config, fmt.Errorf("failed to create config directory: %w", err)
 		}
 
 		file, err := os.Create(configPath)
 		if err != nil {
-			return config, fmt.Errorf("nie udało się stworzyć pliku konfiguracyjnego: %w", err)
+			return config, fmt.Errorf("failed to create config file: %w", err)
 		}
 		defer file.Close()
 
 		if err := toml.NewEncoder(file).Encode(config); err != nil {
-			return config, fmt.Errorf("nie udało się zapisać konfiguracji: %w", err)
+			return config, fmt.Errorf("failed to save configuration: %w", err)
 		}
-		fmt.Printf("Ścieżka zapisana w %s\n", configPath)
-		fmt.Println("Uruchamianie interfejsu...")
+		fmt.Printf("Path saved in %s\n", configPath)
+		fmt.Println("Starting interface...")
 	}
 
 	if _, err := toml.DecodeFile(configPath, &config); err != nil {
-		return config, fmt.Errorf("nie udało się wczytać pliku konfiguracyjnego: %w", err)
+		return config, fmt.Errorf("failed to load config file: %w", err)
 	}
 
 	if config.NotesPath == "" {
-		return config, fmt.Errorf("plik konfiguracyjny %s nie zawiera ścieżki 'notes_path'", configPath)
+		return config, fmt.Errorf("config file %s is missing 'notes_path'", configPath)
 	}
 
 	return config, nil
