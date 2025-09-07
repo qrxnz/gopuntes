@@ -142,6 +142,15 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		return m, loadConfig
 
 	case errorMsg:
+		// If the error indicates the path doesn't exist, go back to the prompt.
+		if os.IsNotExist(msg.err) {
+			m.state = statePromptForPath
+			m.config.NotesPath = "" // Clear the invalid path
+			m.textInput.Focus()
+			// Optionally, you could set an error message to display on the prompt view
+			return m, nil
+		}
+		// For all other errors, quit.
 		m.err = msg.err
 		return m, tea.Quit
 	}
