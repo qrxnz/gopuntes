@@ -25,6 +25,7 @@ Ensure you have a working Go environment (Go 1.21+ is recommended).
 ```sh
 go install github.com/gopuntes@latest
 ```
+
 or
 
 ```sh
@@ -38,6 +39,7 @@ Alternatively, if you have `just` installed, you can simply run:
 ```sh
 just build
 ```
+
 ### Using Nix ❄️
 
 -   Try it without installing:
@@ -108,6 +110,7 @@ On the first launch, you will be prompted to enter the absolute path to the dire
 This project uses [Nix](https://nixos.org/) with flakes and [direnv](https://direnv.net/) to provide a reproducible development environment.
 
 1.  **Clone the repository:**
+
     ```sh
     git clone https://github.com/qrxnz/gopuntes.git
     cd gopuntes
@@ -115,6 +118,7 @@ This project uses [Nix](https://nixos.org/) with flakes and [direnv](https://dir
 
 2.  **Activate the environment:**
     If you have Nix and direnv installed, the environment should be activated automatically when you enter the directory. If not, run:
+
     ```sh
     direnv allow
     ```
@@ -126,6 +130,14 @@ This project uses [Nix](https://nixos.org/) with flakes and [direnv](https://dir
     -   `just build`: Build a production binary.
     -   `just lint`: Run the linter and fix issues.
     -   `just fmt`: Format the Go code.
+
+## 🗒️ Credits
+
+### 🎨 Inspiration
+
+I was inspired by:
+
+-   [charmbracelet/glow](https://github.com/charmbracelet/glow)
 
 ## 📜 License
 
