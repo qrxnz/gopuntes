@@ -9,6 +9,7 @@
 *.dylib
 
 gopuntes
+bin/
 
 # Test binary, built with `go test -c`
 *.test
@@ -28,3 +29,5 @@ go.work.sum
 
 # direnv
 .direnv/
+# Added by goreleaser init:
+dist/
