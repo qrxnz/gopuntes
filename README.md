@@ -4,7 +4,7 @@ https://github.com/user-attachments/assets/ffad79b0-3d63-4247-9ed9-c138204fd2b2
 
 **gopuntes** is a terminal-based application for browsing and viewing your local notes. It provides a fast and simple TUI (Text User Interface) to navigate through your Markdown and PDF files stored in a designated directory.
 
-Built with Go and the charming [Bubble Tea](https://github.com/charmbracelet/bubbletea) framework.
+Built with Go & [Bubble Tea](https://github.com/charmbracelet/bubbletea) framework.
 
 ## 🧰 Features
 
