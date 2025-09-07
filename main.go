@@ -14,7 +14,7 @@ import (
 	"github.com/charmbracelet/bubbles/list"
 	"github.com/charmbracelet/bubbles/textinput"
 	"github.com/charmbracelet/bubbles/viewport"
-	"github.com/charmbracelet/bubbletea"
+	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/glamour"
 	"github.com/charmbracelet/lipgloss"
 )
@@ -64,11 +64,11 @@ type model struct {
 
 // --- MESSAGES ---
 type (
-	configLoadedMsg   struct{ config Config }
-	notesFoundMsg     struct{ notes []item }
-	configSavedMsg    struct{}
-	fileContentMsg    string
-	errorMsg          struct{ err error }
+	configLoadedMsg struct{ config Config }
+	notesFoundMsg   struct{ notes []item }
+	configSavedMsg  struct{}
+	fileContentMsg  string
+	errorMsg        struct{ err error }
 )
 
 func (e errorMsg) Error() string { return e.err.Error() }
@@ -344,8 +344,6 @@ func openPDF(path string) tea.Cmd {
 			cmd = exec.Command("open", path)
 		case "linux":
 			cmd = exec.Command("xdg-open", path)
-		case "windows":
-			cmd = exec.Command("cmd", "/C", "start", path)
 		default:
 			return errorMsg{fmt.Errorf("unsupported operating system: %s", runtime.GOOS)}
 		}
