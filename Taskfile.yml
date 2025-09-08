@@ -1,0 +1,17 @@
+version: "3"
+
+tasks:
+  build:
+    cmds:
+      - go build -o gopuntes
+    desc: "Build the Go project"
+
+  test:
+    cmds:
+      - go test ./...
+    desc: "Run tests"
+
+  lint:
+    cmds:
+      - golangci-lint run
+    desc: "Lint the code"

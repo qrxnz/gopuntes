@@ -34,10 +34,10 @@ cd gopuntes && \
 go build .
 ```
 
-Alternatively, if you have `just` installed, you can simply run:
+Alternatively, if you have `go-task` installed, you can simply run:
 
 ```sh
-just build
+task build
 ```
 
 ### Using Nix ❄️
@@ -124,12 +124,11 @@ This project uses [Nix](https://nixos.org/) with flakes and [direnv](https://dir
     ```
 
 3.  **Available Commands:**
-    This project uses `just` as a command runner. Here are the most common commands:
+    This project uses `go-task` as a command runner. Here are the most common commands:
 
-    -   `just run`: Build and run the application.
-    -   `just build`: Build a production binary.
-    -   `just lint`: Run the linter and fix issues.
-    -   `just fmt`: Format the Go code.
+    -   `task build`: Build a production binary.
+    -   `task test`: Run unit tests.
+    -   `task lint`: Run the linter and fix issues.
 
 ## 🗒️ Credits
 
