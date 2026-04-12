@@ -18,7 +18,7 @@
             delve
 
             # Formatters
-            treefmt2
+            treefmt
             mdformat
             alejandra
 
