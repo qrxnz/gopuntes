@@ -30,7 +30,7 @@
           pname = "gopuntes";
           version = "1.0.5";
           src = self;
-          vendorHash = "sha256-tOBEcWX6JpqoPl7+H0L8RT+nnRRSNQ3FPrl95OwEEJo=";
+          vendorHash = "sha256-LkcZ/WwNHKC4fxf0OShE+x+qDmh2vYIJ1x8QQJKM44A=";
         };
       }
     );
