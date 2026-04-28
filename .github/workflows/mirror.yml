@@ -12,5 +12,5 @@ jobs:
         with: { fetch-depth: 0 }
       - uses: pixta-dev/repository-mirroring-action@v1
         with:
-          target_repo_url: git@codeberg.org:qrxnz/ipl.git
+          target_repo_url: git@codeberg.org:qrxnz/gopuntes.git
           ssh_private_key: ${{ secrets.CODEBERG_SSH }}
