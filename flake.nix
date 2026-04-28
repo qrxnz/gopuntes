@@ -21,6 +21,7 @@
             treefmt
             mdformat
             alejandra
+            prettier
 
             # Others
             go-task
