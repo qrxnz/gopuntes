@@ -1,0 +1,23 @@
+# treefmt configuration file
+# See https://github.com/numtide/treefmt
+
+[formatter.go]
+command = "gofmt"
+options = ["-w"]
+includes = ["*.go"]
+
+[formatter.nix]
+command = "alejandra"
+includes = ["*.nix"]
+
+[formatter.markdown]
+command = "mdformat"
+includes = ["*.md"]
+
+[formatter.yaml]
+command = "prettier"
+options = ["--write"]
+includes = [
+  "*.yaml",
+  "*.yml"
+]

@@ -10,11 +10,11 @@ Built with Go & [Bubble Tea](https://github.com/charmbracelet/bubbletea) framewo
 
 ## 🧰 Features
 
--   **Terminal-based UI**: Browse your notes without leaving the terminal.
--   **Multi-format Support**: Natively renders Markdown (`.md`) files and opens PDF (`.pdf`) files in your system's default viewer.
--   **Simple Setup**: On first run, `gopuntes` will prompt you to set the path to your notes directory.
--   **Fuzzy Search**: Quickly filter and find the note you're looking for.
--   **Cross-Platform**: Works on macOS & Linux.
+- **Terminal-based UI**: Browse your notes without leaving the terminal.
+- **Multi-format Support**: Natively renders Markdown (`.md`) files and opens PDF (`.pdf`) files in your system's default viewer.
+- **Simple Setup**: On first run, `gopuntes` will prompt you to set the path to your notes directory.
+- **Fuzzy Search**: Quickly filter and find the note you're looking for.
+- **Cross-Platform**: Works on macOS & Linux.
 
 ## 🛠️ Installation
 
@@ -48,13 +48,13 @@ task build
 
 ### ❄️ Using Nix
 
--   **Run without installing:**
+- **Run without installing:**
 
 ```bash
 nix run github:qrxnz/gopuntes
 ```
 
--   **Add to a Nix Flake:**
+- **Add to a Nix Flake:**
 
 Add input in your flake like
 
@@ -81,7 +81,7 @@ With the input added you can reference it directly
 }
 ```
 
--   **Install imperatively:**
+- **Install imperatively:**
 
 ```bash
 nix profile install github:qrxnz/gopuntes
@@ -99,36 +99,36 @@ On the first launch, you will be prompted to enter the absolute path to the dire
 
 ### Keybindings
 
--   **Arrow Keys** (`↑`/`↓`): Navigate the list of notes.
--   **Enter**: View the selected note. (Renders Markdown inside the TUI, opens PDFs externally).
--   **`/`**: Start filtering/searching.
--   **`q` / `esc`**: Quit the note view or the filter view.
--   **`Ctrl+C`**: Exit the application.
+- **Arrow Keys** (`↑`/`↓`): Navigate the list of notes.
+- **Enter**: View the selected note. (Renders Markdown inside the TUI, opens PDFs externally).
+- **`/`**: Start filtering/searching.
+- **`q` / `esc`**: Quit the note view or the filter view.
+- **`Ctrl+C`**: Exit the application.
 
 ## 👨🏻‍💻 Development
 
 This project uses [Nix](https://nixos.org/) with flakes and [direnv](https://direnv.net/) to provide a reproducible development environment.
 
-1.  **Clone the repository:**
+1. **Clone the repository:**
 
-    ```sh
-    git clone https://github.com/qrxnz/gopuntes.git
-    cd gopuntes
-    ```
+   ```sh
+   git clone https://github.com/qrxnz/gopuntes.git
+   cd gopuntes
+   ```
 
-2.  **Activate the environment:**
-    If you have Nix and direnv installed, the environment should be activated automatically when you enter the directory. If not, run:
+1. **Activate the environment:**
+   If you have Nix and direnv installed, the environment should be activated automatically when you enter the directory. If not, run:
 
-    ```sh
-    direnv allow
-    ```
+   ```sh
+   direnv allow
+   ```
 
-3.  **Available Commands:**
-    This project uses `go-task` as a command runner. Here are the most common commands:
+1. **Available Commands:**
+   This project uses `go-task` as a command runner. Here are the most common commands:
 
-    -   `task build`: Build a production binary.
-    -   `task test`: Run unit tests.
-    -   `task lint`: Run the linter and fix issues.
+   - `task build`: Build a production binary.
+   - `task test`: Run unit tests.
+   - `task lint`: Run the linter and fix issues.
 
 ## 🗒️ Credits
 
@@ -136,7 +136,7 @@ This project uses [Nix](https://nixos.org/) with flakes and [direnv](https://dir
 
 I was inspired by:
 
--   [charmbracelet/glow](https://github.com/charmbracelet/glow)
+- [charmbracelet/glow](https://github.com/charmbracelet/glow)
 
 ## 📜 License
 
