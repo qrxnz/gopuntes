@@ -16,46 +16,52 @@ Built with Go & [Bubble Tea](https://github.com/charmbracelet/bubbletea) framewo
 -   **Fuzzy Search**: Quickly filter and find the note you're looking for.
 -   **Cross-Platform**: Works on macOS & Linux.
 
-## 📦 Installation
+## 🛠️ Installation
 
-### From Source
+### 📦 Binary Releases
 
-Ensure you have a working Go environment (Go 1.21+ is recommended).
+Pre-compiled binaries for Linux, Windows, and macOS are available on the [Releases](https://github.com/qrxnz/gopuntes/releases) page.
 
-```sh
-go install github.com/gopuntes@latest
+### 🐹Using Go
+
+You can install `gopuntes` directly using `go install`:
+
+```bash
+go install github.com/qrxnz/gopuntes@latest
 ```
 
-or
+### 🏗️ Build from Source
 
-```sh
-git clone https://github.com/qrxnz/gopuntes.git && \
-cd gopuntes && \
-go build .
+To build from source, you need to have [Go](https://go.dev/) installed.
+
+```bash
+git clone https://github.com/qrxnz/gopuntes.git
+cd gopuntes
+go build -o gopuntes .
 ```
 
-Alternatively, if you have `go-task` installed, you can simply run:
+Alternatively, if you have [Task](https://taskfile.dev/) installed, you can use:
 
-```sh
+```bash
 task build
 ```
 
-### Using Nix ❄️
+### ❄️ Using Nix
 
--   Try it without installing:
+-   **Run without installing:**
 
-```sh
+```bash
 nix run github:qrxnz/gopuntes
 ```
 
--   Installation:
+-   **Add to a Nix Flake:**
 
-Add input in your flake like:
+Add input in your flake like
 
 ```nix
 {
  inputs = {
-   gopuntes= {
+   gopuntes = {
      url = "github:qrxnz/gopuntes";
      inputs.nixpkgs.follows = "nixpkgs";
    };
@@ -63,7 +69,7 @@ Add input in your flake like:
 }
 ```
 
-With the input added you can reference it directly:
+With the input added you can reference it directly
 
 ```nix
 { inputs, system, ... }:
@@ -75,17 +81,11 @@ With the input added you can reference it directly:
 }
 ```
 
-or
+-   **Install imperatively:**
 
-You can install this package imperatively with the following command:
-
-```nix
+```bash
 nix profile install github:qrxnz/gopuntes
 ```
-
-### From Releases
-
-Pre-compiled binaries for various operating systems are available on the [GitHub Releases](https://github.com/qrxnz/gopuntes/releases) page. Download the appropriate archive for your system, extract it, and place the `gopuntes` binary in your `PATH`.
 
 ## 📖 Usage
 
