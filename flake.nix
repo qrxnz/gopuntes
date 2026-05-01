@@ -22,6 +22,7 @@
             mdformat
             alejandra
             prettier
+            taplo
 
             # Others
             go-task
