@@ -48,15 +48,15 @@ task build
 
 ### ❄️ Using Nix
 
-- **Run without installing:**
+- **Run without installing**
 
 ```bash
 nix run github:qrxnz/gopuntes
 ```
 
-- **Add to a Nix Flake:**
+- **Add to a Nix Flake**
 
-Add input in your flake like
+Add input in your flake like:
 
 ```nix
 {
@@ -69,7 +69,7 @@ Add input in your flake like
 }
 ```
 
-With the input added you can reference it directly
+With the input added you can reference it directly:
 
 ```nix
 { inputs, system, ... }:
@@ -81,7 +81,7 @@ With the input added you can reference it directly
 }
 ```
 
-- **Install imperatively:**
+- **Install imperatively**
 
 ```bash
 nix profile install github:qrxnz/gopuntes
@@ -109,26 +109,25 @@ On the first launch, you will be prompted to enter the absolute path to the dire
 
 This project uses [Nix](https://nixos.org/) with flakes and [direnv](https://direnv.net/) to provide a reproducible development environment.
 
-1. **Clone the repository:**
+1. **Clone the repositor**
 
-   ```sh
-   git clone https://github.com/qrxnz/gopuntes.git
-   cd gopuntes
-   ```
+    ```sh
+    git clone https://github.com/qrxnz/gopuntes.git
+    cd gopuntes
+    ```
 
-1. **Activate the environment:**
+1. **Activate the environment**
    If you have Nix and direnv installed, the environment should be activated automatically when you enter the directory. If not, run:
 
-   ```sh
-   direnv allow
-   ```
+    ```sh
+    direnv allow
+    ```
 
-1. **Available Commands:**
+1. **Available Commands**
    This project uses `go-task` as a command runner. Here are the most common commands:
-
-   - `task build`: Build a production binary.
-   - `task test`: Run unit tests.
-   - `task lint`: Run the linter and fix issues.
+    - `task build`: Build a production binary.
+    - `task test`: Run unit tests.
+    - `task lint`: Run the linter and fix issues.
 
 ## 🗒️ Credits
 
