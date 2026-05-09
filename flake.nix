@@ -30,7 +30,7 @@
         };
         packages.default = pkgs.buildGoModule {
           pname = "gopuntes";
-          version = "1.0.5";
+          version = "1.0.6";
           src = self;
           vendorHash = "sha256-LkcZ/WwNHKC4fxf0OShE+x+qDmh2vYIJ1x8QQJKM44A=";
         };
