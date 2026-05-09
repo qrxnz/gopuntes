@@ -111,7 +111,7 @@ On the first launch, you will be prompted to enter the absolute path to the dire
 
 This project uses [Nix](https://nixos.org/) with flakes and [direnv](https://direnv.net/) to provide a reproducible development environment.
 
-1. **Clone the repositor**
+1. **Clone the repository**
 
     ```sh
     git clone https://github.com/qrxnz/gopuntes.git
