@@ -21,7 +21,8 @@ import (
 
 // --- STYLES ---
 var (
-	appStyle    = lipgloss.NewStyle().Margin(1, 2)
+	configPathOverride string
+	appStyle           = lipgloss.NewStyle().Margin(1, 2)
 	docStyle    = lipgloss.NewStyle()
 	titleStyle  = lipgloss.NewStyle().Foreground(lipgloss.Color("62")).Bold(true)
 	promptStyle = lipgloss.NewStyle().Foreground(lipgloss.Color("241"))
@@ -254,6 +255,9 @@ func (m model) View() string {
 // --- IO & HELPERS ---
 
 func getConfigPath() (string, error) {
+	if configPathOverride != "" {
+		return configPathOverride, nil
+	}
 	home, err := os.UserHomeDir()
 	if err != nil {
 		return "", err
