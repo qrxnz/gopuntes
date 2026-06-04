@@ -1,6 +1,25 @@
 # gopuntes
 
-[![Go Workflow](https://github.com/qrxnz/gopuntes/actions/workflows/go.yml/badge.svg)](https://github.com/qrxnz/gopuntes/actions/workflows/go.yml)
+<h3 align="center">
+  <div>
+    <a href="https://github.com/qrxnz/gopuntes/issues">
+        <img src="https://img.shields.io/github/issues/qrxnz/gopuntes?color=fab387&labelColor=303446&style=for-the-badge">
+    </a>
+    <a href="https://github.com/qrxnz/gopuntes/stargazers">
+        <img src="https://img.shields.io/github/stars/qrxnz/gopuntes?color=ca9ee6&labelColor=303446&style=for-the-badge">
+    </a>
+    <a href="https://github.com/qrxnz/gopuntes">
+        <img src="https://img.shields.io/github/repo-size/qrxnz/gopuntes?color=ea999c&labelColor=303446&style=for-the-badge">
+    </a>
+    <a href="https://github.com/qrxnz/gopuntes/actions/workflows/go.yml">
+        <img src="https://img.shields.io/github/actions/workflow/status/qrxnz/gopuntes/go.yml?color=a6e3a1&labelColor=303446&style=for-the-badge&label=Go%20Workflow">
+    </a>
+    <a href="https://github.com/qrxnz/gopuntes/blob/main/.github/LICENCE">
+        <img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&logoColor=ca9ee6&colorA=313244&colorB=cba6f7"/>
+    </a>
+    <br>
+    </div>
+</h3>
 
 > A flexible note-browsing tool 💖🇪🇸
 
