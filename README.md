@@ -8,9 +8,6 @@
     <a href="https://github.com/qrxnz/gopuntes/stargazers">
         <img src="https://img.shields.io/github/stars/qrxnz/gopuntes?color=ca9ee6&labelColor=303446&style=for-the-badge">
     </a>
-    <a href="https://github.com/qrxnz/gopuntes">
-        <img src="https://img.shields.io/github/repo-size/qrxnz/gopuntes?color=ea999c&labelColor=303446&style=for-the-badge">
-    </a>
     <a href="https://github.com/qrxnz/gopuntes/actions/workflows/go.yml">
         <img src="https://img.shields.io/github/actions/workflow/status/qrxnz/gopuntes/go.yml?color=a6e3a1&labelColor=303446&style=for-the-badge&label=Go%20Workflow">
     </a>
